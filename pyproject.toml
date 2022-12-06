@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "secret-santa"
+version = "0.1.0"
+description = ""
+authors = ["Nicolas Delaby <ticosax@pm.me>"]
+readme = "README.md"
+packages = [{include = "secret_santa"}]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "3.11"
+click = "*"
+ortools = "*"
+
+[tool.poetry.scripts]
+santa = "secret_santa.santa:assign_pairs"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
