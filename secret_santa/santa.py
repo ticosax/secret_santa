@@ -1,5 +1,6 @@
-import click
 import tomllib
+
+import click
 from ortools.sat.python import cp_model
 
 
@@ -35,8 +36,8 @@ def assign_pairs(filename):
                 receiver = next(
                     (
                         receiver
-                        for receiver, vars in per_receiver_vars.items()
-                        if var in vars
+                        for receiver, vars_ in per_receiver_vars.items()
+                        if var in vars_
                     )
                 )
                 print(f"{giver} should give to {receiver} ")
