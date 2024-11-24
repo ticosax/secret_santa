@@ -20,7 +20,7 @@ def assign_pairs(filename):
             var = model.NewBoolVar(f"{giver} => {receiver}")
             per_giver_vars.setdefault(giver, []).append(var)
             per_receiver_vars.setdefault(receiver, []).append(var)
-            if receiver in data_giver["exclusions"]:
+            if receiver in data_giver.get("exclusions", []):
                 model.Add(var == 0)
 
     for receivers in per_giver_vars.values():
